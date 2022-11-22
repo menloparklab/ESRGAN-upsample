@@ -185,7 +185,7 @@ def inference(all_inputs: dict) -> dict:
 
     upsampler = models[model_id]["upsampler"]
 
-    face_enhance = model_inputs.get("face_enhance", False)
+    face_enhance = model_inputs.get("face_enhance", True)
     if face_enhance:  # Use GFPGAN for face enhancement
         face_enhancer.bg_upsampler = upsampler
 
