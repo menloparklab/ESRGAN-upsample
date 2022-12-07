@@ -232,7 +232,7 @@ def inference(all_inputs: dict) -> dict:
     send("inference", "done", {"startRequestId": startRequestId})
 
     # Return the results as a dictionary
-    return {"image_base64": image_base64}
+    return {"image_base64": [image_base64]}
 
 
 if __name__ == "__main__":
