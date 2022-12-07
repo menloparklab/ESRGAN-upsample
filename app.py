@@ -230,9 +230,10 @@ def inference(all_inputs: dict) -> dict:
     image_base64 = base64.b64encode(cv2.imencode(".jpg", output)[1]).decode()
 
     send("inference", "done", {"startRequestId": startRequestId})
-
+    images = []
+    images.append(image_base64)
     # Return the results as a dictionary
-    return {"image_base64": [image_base64]}
+    return {"image_base64": images}
 
 
 if __name__ == "__main__":
